@@ -22,8 +22,6 @@ const Address = () => {
     const [submitaddres2, setsubmitaddres2] = useState(false);
     const [currentAddress2, setcurrentAddress2] = useState();
 
-    console.log(currentAddress);
-
     const HandleHomeCheck = () => {
         sethomecheack(true);
         setofficecheack(false);
@@ -195,9 +193,13 @@ const Address = () => {
                                 {/* cuurent location */}
                                 <div className="text-base font-montserrat font-medium text-prh2 flex items-center gap-x-1">
                                     <VscLocation className="text-xl" /> Current Location:
-                                    #House&Road:
+                                    #House:
                                     <span className="text-btn">
-                                        {currentAddress?.house & currentAddress?.road}
+                                        {currentAddress?.house} {currentAddress?.road}
+                                    </span>{" "}
+                                    #Road/Block:
+                                    <span className="text-btn">
+                                        {currentAddress?.house} {currentAddress?.road}
                                     </span>{" "}
                                     #Area:
                                     <span className="text-btn">{currentAddress?.block}</span>
@@ -294,10 +296,11 @@ const Address = () => {
                         {submitaddres && (
                             <div className="flex items-center justify-between">
                                 {" "}
-                                <div className="pb-4">
+                                <div className="pb-4 font-montserrat text-prh2 text-base flex items-center font-medium">
+                                    <VscLocation className="text-2xl text-btn" />
                                     <span>
-                                        House&Road: {input?.house & input?.road} Area:{" "}
-                                        {input?.block}
+                                        House: {" "} <span className="text-btn">{input?.house}</span>Block/Road: {" "} <span className="text-btn">{input?.road}</span> Area:{" "}
+                                        <span className="text-btn">{input?.block}</span>
                                     </span>
                                 </div>
                                 <button
@@ -464,7 +467,7 @@ const Address = () => {
                                             className="font-montserrat
                  font-medium text-prh2 text-base"
                                         >
-                                            Block/Road#
+                                            Road/Block#
                                         </h5>
                                         <input
                                             type="text"
@@ -544,7 +547,7 @@ const Address = () => {
                         <textarea
                             name="instruction"
                             placeholder="Add instruction for restaurant"
-                            className="placeholder:text-prh border-2 border-[#dddddd] w-full p-5 rounded-md h-[14.3vw]"
+                            className="placeholder:text-prh border-2 border-[#dddddd] w-full p-5 rounded-md h-[14.5vw]"
                         ></textarea>
                     </div>
                 </div>

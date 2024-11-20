@@ -24,7 +24,7 @@ const Delivery = () => {
             <img src={img} alt="" className="w-[650px]" />
           </div>
           {/* right */}
-          <div>
+          <div className="ml-10">
             <TitleDes
               className={"max-w-[460px]"}
               p2={true}
@@ -34,7 +34,7 @@ const Delivery = () => {
               }
             />
             {/* Service */}
-            <div className="pt-12 flex flex-col items-start gap-y-5 ml-10">
+            <div className="pt-12 flex flex-col items-start gap-y-5">
               <div className="flex items-center gap-x-4">
                 <img src={icon1} alt="" />
                 <h5 className="font-montserrat font-bold text-base text-prh2">

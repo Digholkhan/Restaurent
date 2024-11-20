@@ -68,7 +68,7 @@ const CheckoutForm = ({ parent }) => {
                                         {/* <p className=''>{checkOut.Variation}</p> */}
                                         <p className=''>{checkOut.Variation}</p>
                                     </td>
-                                    <td className="py-2 px-3 text-center">${checkOut.price}</td>
+                                    <td className="py-2 px-3 text-center">${(checkOut.price).toFixed(2)}</td>
                                 </tr>
 
                             </tbody>
@@ -95,8 +95,8 @@ const CheckoutForm = ({ parent }) => {
                         <div>
                             <label className="block text-sm font-montserrat font-medium text-gray-600 mb-1">Phone Number</label>
                             <input
-                                type="text"
-                                name="text"
+                                type="tel"
+                                name="phone"
                                 value={formData.phone}
                                 onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
                                 className="w-full px-4 py-2 border font-montserrat text-sm border-gray-300 rounded-full focus:border-btn"

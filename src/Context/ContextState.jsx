@@ -122,7 +122,8 @@ const inisialState = {
   checkOut: dltsProduct(),
   Blog_D: [],
   toast: false,
-  toastMessage: "order was add to cart"
+  toastMessage: "order was add to cart",
+  reviewArr: [],
 };
 
 const ContextState = ({ children }) => {
@@ -422,10 +423,10 @@ const ContextState = ({ children }) => {
   // AddcartPopUp part end
 
   // addToCart part start
-  const addToCart = (id, quantity, Variation) => {
+  const addToCart = (id, quantity, Variation, price) => {
     dispatch({
       type: "addToCart",
-      payload: { id, quantity, Variation }
+      payload: { id, quantity, Variation, price }
     });
 
     setTimeout(() => {
@@ -528,17 +529,17 @@ const ContextState = ({ children }) => {
       type: "CloseCart"
     })
   }
-  // CloseCart_end
+  // CloseCart end
 
   // handleCheckout start
-  const handleCheckout = (id, quantity, Variation) => {
+  const handleCheckout = (id, quantity, Variation, price) => {
     dispatch({
       type: "handleCheckout",
-      payload: { id, quantity, Variation }
+      payload: { id, quantity, Variation, price }
     })
   }
 
-  // handleCheckout_end
+  // handleCheckout end
 
 
   // searchFilter start
@@ -548,7 +549,7 @@ const ContextState = ({ children }) => {
       payload: value,
     });
   };
-  // searchFilter_end
+  // searchFilter end
 
 
   // addBlogDetails start
@@ -558,7 +559,7 @@ const ContextState = ({ children }) => {
       payload: id,
     });
   };
-  // addBlogDetails_end
+  // addBlogDetails end
 
   // add_remove_ToToast part start
   const add_remove_ToToast = (text) => {
@@ -571,9 +572,23 @@ const ContextState = ({ children }) => {
       dispatch({
         type: "removeToast"
       })
-    }, 2500)
+    }, 3500)
   };
   // add_remove_ToToast part end
+
+
+  // revFnc part start
+  const revFnc = (newReview) => {
+    dispatch({
+      type: "revFnc",
+      payload: newReview
+    })
+  }
+  // revFnc part end
+
+
+
+
 
 
   return (
@@ -592,7 +607,8 @@ const ContextState = ({ children }) => {
         handleCheckout,
         searchFilter,
         addBlogDetails,
-        add_remove_ToToast
+        add_remove_ToToast,
+        revFnc
       }}
     >
       {children}

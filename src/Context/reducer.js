@@ -77,7 +77,7 @@ export const reducer = (state, action) => {
 
   // addToCart start
   if (action.type == "addToCart") {
-    const { id, quantity, Variation } = action.payload;
+    const { id, quantity, Variation, price } = action.payload;
 
     const add = state.filtterFood.filter((el) => {
       if (el.id === id) {
@@ -89,7 +89,7 @@ export const reducer = (state, action) => {
       id: add[0].id,
       name: add[0].name,
       description: add[0].description,
-      price: add[0].price,
+      price: price,
       image: add[0].image,
       category: add[0].category,
       thums: add[0].thums,
@@ -198,7 +198,7 @@ export const reducer = (state, action) => {
 
   // handleCheckout start 
   if (action.type == "handleCheckout") {
-    const { id, quantity, Variation } = action.payload;
+    const { id, quantity, Variation, price } = action.payload;
 
     const add = state.filtterFood.filter((el) => {
       if (el.id === id) {
@@ -210,7 +210,7 @@ export const reducer = (state, action) => {
       id: add[0].id,
       name: add[0].name,
       description: add[0].description,
-      price: add[0].price,
+      price: price,
       image: add[0].image,
       category: add[0].category,
       thums: add[0].thums,
@@ -247,27 +247,6 @@ export const reducer = (state, action) => {
   }
   //addBlogDetails part end
 
-  // //fvActiv part start
-  // if (action.type == "fvDeActiv") {
-  //   return {
-  //     ...state,
-  //     toast: true,
-  //     toastMessage: "Add To Wishlist"
-  //   };
-  // }
-  // //fvActiv part end
-
-  // //fvActiv part start
-  // if (action.type == "fvActiv") {
-  //   return {
-  //     ...state,
-  //     toast: true,
-  //     toastMessage: "Remove To Wishlist"
-  //   };
-  // }
-  // //fvActiv part end
-
-
   // addToToast part start
   if (action.type == "addToToast") {
     return {
@@ -286,6 +265,16 @@ export const reducer = (state, action) => {
     }
   }
   // removeToast part end 
+
+
+  // revFnc part start 
+  if (action.type == "revFnc") {
+    return {
+      ...state,
+      reviewArr: [...state.reviewArr, action.payload]
+    }
+  }
+  // revFnc part end 
 
   return state;
 }

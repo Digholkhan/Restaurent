@@ -22,16 +22,16 @@ const Video = () => {
       }) &&
       gsap.to("#video2", {
         opacity: 1,
-        zIndex: "999",
+        zIndex: 100000,
         duration: 0.5,
       }) &&
       gsap.to("#overlay", {
         opacity: 1,
-        zIndex: 999,
+        zIndex: 100000,
       }) &&
       gsap.to("#crose", {
         display: "block",
-        zIndex: 999,
+        zIndex: 100000,
       })
       : gsap.to("#video", {
         opacity: 1,
@@ -106,7 +106,7 @@ const Video = () => {
           </span>
         </a>
 
-        <div className="flex items-center justify-center w-full absolute top-[70%] left-[50%] -translate-x-[50%] -translate-y-[60%]">
+        <div className="flex items-center justify-center w-full absolute top-[65%] left-[50%] -translate-x-[50%] -translate-y-[60%]">
           <TitleDes
             mainTitle={"Feel the authentic & original taste from us"}
             p1={false}

@@ -39,14 +39,14 @@ const Wishlist = () => {
             <FaHeart />
           </span>
         </div>
-        <div className="flex items-center text-center flex-wrap justify-between">
-          {favouriteFood.length < 1 ? (
-            <div className="flex items-center w-full justify-center">
-              <span className="text-red-500 font-montserrat text-2xl  py-10">
+        <div className="grid grid-cols-4">
+          {favouriteFood.length < 1 ?
+            <div className="text-center w-[1200px]">
+              <span className="text-red-500 text-center font-montserrat text-2xl  py-10">
                 Your cart is empty
               </span>
             </div>
-          ) : (
+            :
             favouriteFood?.map((el) => (
               <SpecialCard
                 key={el.id}
@@ -55,7 +55,7 @@ const Wishlist = () => {
                 HandleFavourit={() => HandleFavour(el.id)}
               />
             ))
-          )}
+          }
         </div>
       </Container>
     </div>

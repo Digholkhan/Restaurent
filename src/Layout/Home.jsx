@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import Banner from "../Component/Banner";
 import Special_Dis from "../Component/Special_Dis";
 import HealthyFood from "../Component/HealthyFood";
@@ -6,11 +6,11 @@ import Video from "../Component/AboutPage/Video";
 import Chef from "../Component/Chef";
 import Review from "../Component/AboutPage/Review";
 import Articels from "../Component/Articels";
-import AddToCartPopUp from "../Component/AddToCartPopUp";
-import Context from "../Context/Context";
+import CustomerReviewForm from "../Component/CustomerReviewForm";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
-  const { popUp } = useContext(Context)
   return (
     <div>
       <Banner />
@@ -19,12 +19,15 @@ const Home = () => {
       <Video />
       <Chef />
       <Review />
+      <div className="text-center">
+        <Link to={'/reviewForm'} >
+          <button className="bg-black text-white px-4 py-2 rounded-full"
+          >
+            Add a Review
+          </button>
+        </Link>
+      </div>
       <Articels />
-
-
-      <AddToCartPopUp
-        className={`fixed z-50 top-0 left-0 ${!popUp ? "hidden" : "block"}`}
-      />
     </div>
   );
 };

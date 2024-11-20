@@ -13,13 +13,13 @@ const paymentMethods = [
         id: 1,
         name: "Cash on Delivery",
         icon: cash,
-        description: "You woill be directed to bKash to complete your payment.",
+        description: "You will be directed to bKash to complete your payment.",
     },
     {
         id: 2,
         name: "bkash",
         icon: bkash,
-        description: "You woill be directed to bKash to complete your payment.",
+        description: "You will be directed to bKash to complete your payment.",
     },
     {
         id: 3,
@@ -37,7 +37,7 @@ const paymentMethods = [
         id: 5,
         name: "Other Payments",
         icon: ssl,
-        description: "You woill be directed to bKash to complete your payment.",
+        description: "You will be directed to bKash to complete your payment.",
     },
 ];
 

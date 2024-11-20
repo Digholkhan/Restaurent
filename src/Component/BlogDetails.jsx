@@ -8,7 +8,7 @@ const BlogDetails = () => {
   const { Blog_D } = useContext(Context)
 
   return (
-    <div className='mt-[6vw]'>
+    <div className='mt-[7vw]'>
       <div>
         <Container>
           <div className='pb-20'>

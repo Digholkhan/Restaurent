@@ -18,7 +18,7 @@ const OrderPage = () => {
     }
 
     return (
-        <div className='mt-[7vw]'>
+        <div className='mt-[9.5vw]'>
             <Container className={''}>
                 <div className={`flex justify-between ${pyMethod ? "mb-[0vw]" : "mb-[3vw]"}`}>
                     <div className="w-[65%]">

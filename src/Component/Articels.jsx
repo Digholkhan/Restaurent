@@ -23,7 +23,7 @@ const Articels = () => {
 
         <div className=" mt-12 flex gap-x-10">
 
-          <div className="h-[732px] w-[550px] bg-white rounded-xl shadow-xl ">
+          <div className="h-[735px] w-[550px] bg-white rounded-xl shadow-xl ">
 
             <img src={Blog_D == false ? Burger : Blog_D[0].thums[0]} alt="blog_one.jpg" className='rounded-t-xl w-full h-[450px] object-cover' />
 
@@ -35,8 +35,9 @@ const Articels = () => {
               The secret tips & tricks to prepare a perfect burger & {Blog_D == false ? "pizza" : Blog_D[0].name} for our customers
             </h3>
 
+
             <p className='text-[14px] text-prh2 font-montserrat font-medium leading-5 pt-6 pb-3 ml-3'>
-              {Blog_D == false ? "Lorem ipsum dolor sit amet consectetur of a adipiscing elitilmim semper adipiscing massa gravida nisi cras enim quis nibholm varius amet gravida ut facilisis neque egestas." : Blog_D[0].description}
+              {Blog_D == false ? " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim id, facere hic cumque voluptas tenetur libero, saepe quae nostrum dolorum accusamus maiores! Dolor quas mollitia velit natus illum, magnam libero, iste deserunt architecto tenetur inventore perferendis fugit blanditiis autem eaque quisquam quia eligendi similique hic sint? Obcaecati at ratione error veritatis consequatur." : Blog_D[0].description}
             </p>
           </div>
 

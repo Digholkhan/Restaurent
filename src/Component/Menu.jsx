@@ -12,7 +12,6 @@ import img7 from "../assets/7.png";
 import img8 from "../assets/8.png";
 import img9 from "../assets/9.png";
 import Context from "../Context/Context";
-import AddToCartPopUp from "./AddToCartPopUp";
 import SearchBar from "./SearchBar";
 
 const Menu = () => {
@@ -21,8 +20,7 @@ const Menu = () => {
 
   const [active, setactive] = useState(menuList[0]);
 
-  const { FoodBank, activeCategory, popUp, popUpCart, cart } =
-    useContext(Context);
+  const { FoodBank, activeCategory } = useContext(Context);
 
   const targetCategory = (el) => {
     setactive(el);
@@ -30,7 +28,7 @@ const Menu = () => {
   };
 
   return (
-    <div className="bg-group bg-center bg-no-repeat bg-contain">
+    <div className="bg-group bg-center bg-no-repeat bg-contain mt-[2vw]">
       <Container>
         <h1 className="pt-24 text-center font-serif font-medium text-[100px] text-prh2">
           Our Menu
@@ -50,7 +48,7 @@ const Menu = () => {
               key={idx}
               text={el}
               onClick={() => targetCategory(el)}
-              className={` w-[150px] !px-0 !py-[10px] text-center font-semibold ${active == el ? "bg-btn text-white border-btn" : false
+              className={` w-[150px] !px-0 !py-[10px] text-center font-semibold !hover:bg-btn ${active == el ? "!bg-btn text-white border-btn" : false
                 }`}
             />
           ))}
@@ -87,10 +85,6 @@ const Menu = () => {
           </div>
         </Container>
       </div>
-
-      <AddToCartPopUp
-        className={`fixed z-50 top-0 left-0 ${!popUp ? "hidden" : "block"}`}
-      />
     </div>
   );
 };
